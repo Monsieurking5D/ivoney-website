@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivoney | Miel 100% Pur de Côte d'Ivoire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
+        .bg-honey { background-color: #FBBF24; }
+        .text-honey { color: #D97706; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-honey flex items-center">
+                <span class="mr-2">🍯</span> Ivoney
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#produits" class="hover:text-honey transition">Nos Miels</a>
+                <a href="#histoire" class="hover:text-honey transition">Notre Histoire</a>
+                <a href="#contact" class="hover:text-honey transition">Contact</a>
+            </nav>
+            <a href="#produits" class="bg-honey text-white px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition shadow-md">
+                Commander
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=1920&q=80" alt="Honey Background" class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="relative z-20 text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl mb-6">L'Essence Pure de la Côte d'Ivoire</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto font-light">
+                Un miel 100% naturel, récolté au cœur des terroirs ivoiriens. Pureté garantie, saveurs inoubliables.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#produits" class="bg-honey text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-amber-500 transition shadow-lg">
+                    Découvrir nos récoltes
+                </a>
+                <a href="#histoire" class="bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-3 rounded-full text-lg font-bold hover:bg-white/30 transition">
+                    Notre Engagement
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🌿</div>
+                    <h3 class="text-xl font-bold mb-4">100% Naturel</h3>
+                    <p class="text-stone-600">Sans aucun additif ni sucre ajouté. Juste le travail des abeilles et la nature.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🇨🇮</div>
+                    <h3 class="text-xl font-bold mb-4">Origine Côte d'Ivoire</h3>
+                    <p class="text-stone-600">Un terroir riche offrant des saveurs exotiques et authentiques.</p>
+                </div>
+                <div>
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🛡️</div>
+                    <h3 class="text-xl font-bold mb-4">Qualité Contrôlée</h3>
+                    <p class="text-stone-600">Importé et analysé pour garantir une pureté absolue à chaque pot.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview -->
+    <section id="produits" class="py-20 bg-stone-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl text-center mb-16">Nos Trésors Ambrés</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300">
+                    <div class="h-64 bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80" alt="Miel de Forêt" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Miel de Forêt Tropicale</h3>
+                            <span class="text-honey font-bold">12.50€</span>
+                        </div>
+                        <p class="text-stone-600 mb-6 text-sm">Notes boisées et puissance aromatique. Récolté dans les zones forestières de l'Ouest.</p>
+                        <button class="w-full border-2 border-honey text-honey font-bold py-2 rounded-lg hover:bg-honey hover:text-white transition">
+                            Ajouter au panier
+                        </button>
+                    </div>
+                </div>
+                <!-- More products can be added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Story -->
+    <section id="histoire" class="py-20 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1555035336-54a2dd0cd663?auto=format&fit=crop&w=800&q=80" alt="Apiculture" class="rounded-3xl shadow-2xl">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-4xl mb-6">De la Côte d'Ivoire à votre Table</h2>
+                <p class="text-stone-600 text-lg mb-6">
+                    Ivoney est né d'une passion pour les produits authentiques. Nous travaillons main dans la main avec des apiculteurs locaux en Côte d'Ivoire pour vous apporter un miel rare, puissant et d'une pureté exceptionnelle.
+                </p>
+                <p class="text-stone-600 text-lg">
+                    Chaque pot raconte l'histoire d'un écosystème préservé et d'un savoir-faire artisanal respectueux de la biodiversité.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-white py-12">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold text-honey mb-4">🍯 Ivoney</div>
+                <p class="text-stone-400 text-sm">L'excellence du miel ivoirien livré chez vous en France.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Navigation</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="#" class="hover:text-white transition">Accueil</a></li>
+                    <li><a href="#produits" class="hover:text-white transition">Boutique</a></li>
+                    <li><a href="#histoire" class="hover:text-white transition">Notre Histoire</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Légal</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="#" class="hover:text-white transition">Mentions Légales</a></li>
+                    <li><a href="#" class="hover:text-white transition">CGV</a></li>
+                    <li><a href="#" class="hover:text-white transition">Confidentialité</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Suivez-nous</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-honey transition">FB</a>
+                    <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-honey transition">IG</a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
+            &copy; 2026 Ivoney. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+ur vous apporter un miel rare, puissant et d'une pureté exceptionnelle.
+                </p>
+                <p class="text-stone-600 text-lg">
+                    Chaque pot raconte l'histoire d'un écosystème préservé et d'un savoir-faire artisanal respectueux de la biodiversité.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-900 text-white py-12">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold text-honey mb-4">🍯 Ivoney</div>
+                <p class="text-stone-400 text-sm">L'excellence du miel ivoirien livré chez vous en France.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Navigation</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="#" class="hover:text-white">Accueil</a></li>
+                    <li><a href="#produits" class="hover:text-white">Boutique</a></li>
+                    <li><a href="#histoire" class="hover:text-white">Notre Histoire</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Légal</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="#" class="hover:text-white">Mentions Légales</a></li>
+                    <li><a href="#" class="hover:text-white">CGV</a></li>
+                    <li><a href="#" class="hover:text-white">Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Contact</h4>
+                <p class="text-stone-400 mb-2">📍 Basé en France</p>
+                <p class="text-stone-400">📧 contact@ivoney.fr</p>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
+            &copy; 2026 Ivoney. Tous droits réservés.
+        </div>
+    </footer>
+
+</body>
+</html>

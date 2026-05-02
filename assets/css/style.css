@@ -1,0 +1,42 @@
+/* Custom Styles for Ivoney */
+:root {
+    --honey-primary: #FBBF24;
+    --honey-secondary: #D97706;
+    --stone-dark: #1C1917;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.font-playfair {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Honey drip effect animation placeholder */
+@keyframes drip {
+    0% { transform: translateY(-10px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
+}
+
+.drip-animation {
+    animation: drip 2s infinite ease-in-out;
+}
+
+/* Card hover effects */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Gradient text */
+.text-gradient {
+    background: linear-gradient(to right, #D97706, #FBBF24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
