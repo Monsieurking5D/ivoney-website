@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miel de Forêt Tropicale | Ivoney</title>
+    <meta name="description" content="Découvrez notre Miel de Forêt Tropicale, récolté dans les zones forestières de l'Ouest ivoirien. Notes boisées, puissance aromatique, 100% naturel.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .bg-honey { background-color: #FBBF24; }
+        .text-honey { color: #D97706; }
+        .border-honey { border-color: #FBBF24; }
+
+        /* Quantity selector */
+        .qty-btn {
+            width: 36px; height: 36px;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid #FBBF24; border-radius: 8px;
+            cursor: pointer; font-size: 1.2rem; font-weight: bold;
+            color: #D97706; transition: all 0.2s;
+        }
+        .qty-btn:hover { background: #FBBF24; color: white; }
+
+        /* Stars */
+        .star { color: #FBBF24; }
+
+        /* Sticky image */
+        @media (min-width: 768px) {
+            .sticky-image { position: sticky; top: 100px; }
+        }
+
+        /* Breadcrumb separator */
+        .breadcrumb-sep::before { content: '/'; margin: 0 8px; color: #9CA3AF; }
+
+        /* Scroll reveal animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Badge pulse */
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .badge-pulse { animation: pulse-badge 2s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-honey flex items-center" style="font-family:'Playfair Display',serif;">
+                <span class="mr-2">🍯</span> Ivoney
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html#produits" class="hover:text-honey transition">Nos Miels</a>
+                <a href="index.html#histoire" class="hover:text-honey transition">Notre Histoire</a>
+                <a href="index.html#contact" class="hover:text-honey transition">Contact</a>
+            </nav>
+            <a href="index.html#produits" class="bg-honey text-white px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition shadow-md">
+                Commander
+            </a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b border-stone-100">
+        <div class="container mx-auto px-6 py-3 text-sm text-stone-500 flex items-center">
+            <a href="index.html" class="hover:text-honey transition">Accueil</a>
+            <span class="breadcrumb-sep"></span>
+            <a href="index.html#produits" class="hover:text-honey transition">Nos Miels</a>
+            <span class="breadcrumb-sep"></span>
+            <span class="text-stone-900 font-medium">Miel de Forêt Tropicale</span>
+        </div>
+    </div>
+
+    <!-- Product Main Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-start">
+
+                <!-- Left: Image Gallery -->
+                <div class="md:w-1/2 sticky-image fade-in">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img 
+                            id="main-product-img"
+                            src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=900&q=80" 
+                            alt="Miel de Forêt Tropicale" 
+                            class="w-full h-[500px] object-cover"
+                        >
+                        <!-- Badge -->
+                        <div class="absolute top-5 left-5 badge-pulse">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">🌿 100% Naturel</span>
+                        </div>
+                    </div>
+                    <!-- Thumbnails -->
+                    <div class="flex gap-3 mt-4">
+                        <button onclick="changeImage('https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=900&q=80')" 
+                            class="w-20 h-20 rounded-xl overflow-hidden border-2 border-honey shadow-md">
+                            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                        <button onclick="changeImage('https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=900&q=80')"
+                            class="w-20 h-20 rounded-xl overflow-hidden border-2 border-stone-200 hover:border-honey transition shadow-md">
+                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                        <button onclick="changeImage('https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=900&q=80')"
+                            class="w-20 h-20 rounded-xl overflow-hidden border-2 border-stone-200 hover:border-honey transition shadow-md">
+                            <img src="https://images.unsplash.com/photo-1473973266408-ed4e27abdd47?auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Product Details -->
+                <div class="md:w-1/2 fade-in">
+                    <!-- Rating -->
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="flex">
+                            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                        </div>
+                        <span class="text-stone-500 text-sm">(47 avis)</span>
+                    </div>
+
+                    <h1 class="text-4xl md:text-5xl mb-3">Miel de Forêt Tropicale</h1>
+                    <p class="text-stone-500 text-sm mb-6 uppercase tracking-widest">Origine : Forêts de l'Ouest, Côte d'Ivoire</p>
+
+                    <!-- Price -->
+                    <div class="flex items-baseline gap-3 mb-6">
+                        <span class="text-4xl font-bold text-honey">12,50€</span>
+                        <span class="text-stone-400 text-sm">/ pot de 500g</span>
+                    </div>
+
+                    <!-- Short description -->
+                    <p class="text-stone-600 text-lg leading-relaxed mb-8">
+                        Un miel d'exception aux notes <strong>boisées et profondes</strong>, récolté au cœur des forêts tropicales de l'Ouest ivoirien. Sa couleur ambrée et sa texture dense témoignent d'une richesse naturelle préservée.
+                    </p>
+
+                    <!-- Flavour tags -->
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">🌲 Notes Boisées</span>
+                        <span class="bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">🍂 Arômes Profonds</span>
+                        <span class="bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">💛 Texture Dense</span>
+                        <span class="bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">🌿 Non Filtré</span>
+                    </div>
+
+                    <!-- Divider -->
+                    <hr class="border-stone-200 mb-8">
+
+                    <!-- Quantity & Add to Cart -->
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="flex items-center gap-3">
+                            <button class="qty-btn" onclick="changeQty(-1)">−</button>
+                            <span id="qty-display" class="text-xl font-bold w-8 text-center">1</span>
+                            <button class="qty-btn" onclick="changeQty(1)">+</button>
+                        </div>
+                        <button 
+                            onclick="addToCart()"
+                            class="flex-1 bg-honey text-white font-bold py-3 px-8 rounded-full hover:bg-amber-500 transition shadow-lg text-lg"
+                        >
+                            Ajouter au panier
+                        </button>
+                    </div>
+
+                    <!-- Confirmation message -->
+                    <div id="cart-confirm" class="hidden text-center bg-green-50 text-green-700 border border-green-200 rounded-xl py-2 mb-6 text-sm font-medium">
+                        ✅ Produit ajouté au panier !
+                    </div>
+
+                    <!-- Trust badges -->
+                    <div class="grid grid-cols-3 gap-4 text-center mt-8">
+                        <div class="bg-stone-100 rounded-2xl p-4">
+                            <div class="text-2xl mb-1">🚚</div>
+                            <p class="text-xs font-semibold text-stone-700">Livraison rapide</p>
+                        </div>
+                        <div class="bg-stone-100 rounded-2xl p-4">
+                            <div class="text-2xl mb-1">🛡️</div>
+                            <p class="text-xs font-semibold text-stone-700">Qualité garantie</p>
+                        </div>
+                        <div class="bg-stone-100 rounded-2xl p-4">
+                            <div class="text-2xl mb-1">↩️</div>
+                            <p class="text-xs font-semibold text-stone-700">Retours 14 jours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Tabs -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- Tab buttons -->
+            <div class="flex border-b border-stone-200 mb-10 gap-6">
+                <button onclick="showTab('description')" id="tab-description" class="tab-btn pb-3 font-semibold text-honey border-b-2 border-honey">Description</button>
+                <button onclick="showTab('composition')" id="tab-composition" class="tab-btn pb-3 font-medium text-stone-400 hover:text-honey transition">Composition</button>
+                <button onclick="showTab('avis')" id="tab-avis" class="tab-btn pb-3 font-medium text-stone-400 hover:text-honey transition">Avis (47)</button>
+            </div>
+
+            <!-- Description Tab -->
+            <div id="content-description" class="tab-content fade-in">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl mb-4">Un trésor des forêts ivoiriennes</h3>
+                        <p class="text-stone-600 leading-relaxed mb-4">
+                            Notre Miel de Forêt Tropicale est récolté par des apiculteurs locaux dans les zones forestières denses de l'Ouest de la Côte d'Ivoire. Les abeilles butinent une grande diversité de fleurs sauvages, conférant à ce miel une complexité aromatique unique.
+                        </p>
+                        <p class="text-stone-600 leading-relaxed mb-4">
+                            Sa couleur ambrée foncée et sa cristallisation lente sont la marque d'un miel riche en minéraux et en antioxydants. Il est récolté en saison sèche pour garantir une concentration optimale des saveurs.
+                        </p>
+                        <p class="text-stone-600 leading-relaxed">
+                            Idéal pour accompagner des fromages affinés, des tartines de pain de campagne ou pour sucrer naturellement vos infusions.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl mb-4">Caractéristiques</h3>
+                        <table class="w-full text-sm text-stone-600">
+                            <tr class="border-b border-stone-100">
+                                <td class="py-3 font-semibold text-stone-800">Poids</td>
+                                <td class="py-3">500g</td>
+                            </tr>
+                            <tr class="border-b border-stone-100">
+                                <td class="py-3 font-semibold text-stone-800">Origine</td>
+                                <td class="py-3">Forêts de l'Ouest, Côte d'Ivoire</td>
+                            </tr>
+                            <tr class="border-b border-stone-100">
+                                <td class="py-3 font-semibold text-stone-800">Type</td>
+                                <td class="py-3">Miel de forêt toutes fleurs</td>
+                            </tr>
+                            <tr class="border-b border-stone-100">
+                                <td class="py-3 font-semibold text-stone-800">Couleur</td>
+                                <td class="py-3">Ambre foncé</td>
+                            </tr>
+                            <tr class="border-b border-stone-100">
+                                <td class="py-3 font-semibold text-stone-800">Texture</td>
+                                <td class="py-3">Liquide à légèrement crémeuse</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 font-semibold text-stone-800">Conservation</td>
+                                <td class="py-3">À l'abri de la chaleur, 2 ans</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Composition Tab -->
+            <div id="content-composition" class="tab-content hidden fade-in">
+                <div class="max-w-2xl">
+                    <h3 class="text-2xl mb-6">Composition & Valeurs nutritionnelles</h3>
+                    <p class="text-stone-600 mb-6">Pour 100g de miel :</p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center bg-stone-50 rounded-xl px-5 py-3">
+                            <span class="font-medium">Énergie</span>
+                            <span class="text-stone-500">304 kcal</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-stone-50 rounded-xl px-5 py-3">
+                            <span class="font-medium">Glucides</span>
+                            <span class="text-stone-500">82.4g</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-stone-50 rounded-xl px-5 py-3">
+                            <span class="font-medium">dont sucres</span>
+                            <span class="text-stone-500">82.1g</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-stone-50 rounded-xl px-5 py-3">
+                            <span class="font-medium">Protéines</span>
+                            <span class="text-stone-500">0.3g</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-stone-50 rounded-xl px-5 py-3">
+                            <span class="font-medium">Sel</span>
+                            <span class="text-stone-500">0g</span>
+                        </div>
+                    </div>
+                    <p class="text-stone-400 text-sm mt-6">Ingrédients : Miel pur de forêt tropicale (100%). Sans additifs, sans conservateurs.</p>
+                </div>
+            </div>
+
+            <!-- Avis Tab -->
+            <div id="content-avis" class="tab-content hidden fade-in">
+                <div class="max-w-2xl space-y-6">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="text-5xl font-bold text-honey">5.0</div>
+                        <div>
+                            <div class="flex text-2xl">⭐⭐⭐⭐⭐</div>
+                            <p class="text-stone-500 text-sm mt-1">Basé sur 47 avis</p>
+                        </div>
+                    </div>
+
+                    <!-- Review cards -->
+                    <div class="bg-stone-50 rounded-2xl p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="font-bold">Sophie M.</p>
+                                <div class="text-yellow-400 text-sm">★★★★★</div>
+                            </div>
+                            <span class="text-stone-400 text-xs">Il y a 3 jours</span>
+                        </div>
+                        <p class="text-stone-600 text-sm">"Un miel d'une richesse incroyable ! Les arômes boisés sont présents sans être trop forts. Je l'utilise chaque matin sur mes tartines."</p>
+                    </div>
+                    <div class="bg-stone-50 rounded-2xl p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="font-bold">Kofi A.</p>
+                                <div class="text-yellow-400 text-sm">★★★★★</div>
+                            </div>
+                            <span class="text-stone-400 text-xs">Il y a 1 semaine</span>
+                        </div>
+                        <p class="text-stone-600 text-sm">"Enfin un miel qui me rappelle les saveurs de chez moi. Authentique, pur et délicieux. Je recommande vivement !"</p>
+                    </div>
+                    <div class="bg-stone-50 rounded-2xl p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <div>
+                                <p class="font-bold">Marie-Claire D.</p>
+                                <div class="text-yellow-400 text-sm">★★★★★</div>
+                            </div>
+                            <span class="text-stone-400 text-xs">Il y a 2 semaines</span>
+                        </div>
+                        <p class="text-stone-600 text-sm">"La qualité est exceptionnelle. On sent vraiment la différence avec les miels industriels. Livraison rapide et emballage soigné."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-stone-900 text-white py-12">
+        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="text-2xl font-bold text-honey mb-4" style="font-family:'Playfair Display',serif;">🍯 Ivoney</div>
+                <p class="text-stone-400 text-sm">L'excellence du miel ivoirien livré chez vous en France.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Navigation</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="index.html" class="hover:text-white">Accueil</a></li>
+                    <li><a href="index.html#produits" class="hover:text-white">Boutique</a></li>
+                    <li><a href="index.html#histoire" class="hover:text-white">Notre Histoire</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Légal</h4>
+                <ul class="space-y-2 text-stone-400">
+                    <li><a href="#" class="hover:text-white">Mentions Légales</a></li>
+                    <li><a href="#" class="hover:text-white">CGV</a></li>
+                    <li><a href="#" class="hover:text-white">Politique de Confidentialité</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Contact</h4>
+                <p class="text-stone-400 mb-2">📍 Basé en France</p>
+                <p class="text-stone-400">📧 contact@ivoney.fr</p>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
+            &copy; 2026 Ivoney. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        // Quantity management
+        let qty = 1;
+        function changeQty(delta) {
+            qty = Math.max(1, qty + delta);
+            document.getElementById('qty-display').textContent = qty;
+        }
+
+        // Add to cart feedback
+        function addToCart() {
+            const msg = document.getElementById('cart-confirm');
+            msg.classList.remove('hidden');
+            setTimeout(() => msg.classList.add('hidden'), 3000);
+        }
+
+        // Image gallery
+        function changeImage(src) {
+            document.getElementById('main-product-img').src = src;
+        }
+
+        // Tabs
+        function showTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-honey', 'border-b-2', 'border-honey');
+                btn.classList.add('text-stone-400');
+            });
+
+            const content = document.getElementById('content-' + tab);
+            content.classList.remove('hidden');
+            setTimeout(() => content.classList.add('visible'), 10);
+
+            const btn = document.getElementById('tab-' + tab);
+            btn.classList.add('text-honey', 'border-b-2', 'border-honey');
+            btn.classList.remove('text-stone-400');
+        }
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Init first tab
+        showTab('description');
+    </script>
+</body>
+</html>
