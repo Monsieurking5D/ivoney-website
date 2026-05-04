@@ -16,19 +16,29 @@
 <body class="bg-stone-50 text-stone-900">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-honey flex items-center">
                 <span class="mr-2">🍯</span> Ivoney
             </div>
+            
+            <!-- Hamburger Menu for Mobile -->
+            <button data-mobile-menu class="md:hidden text-stone-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
             <nav class="hidden md:flex space-x-8 font-medium">
                 <a href="#produits" class="hover:text-honey transition">Nos Miels</a>
                 <a href="#histoire" class="hover:text-honey transition">Notre Histoire</a>
                 <a href="#contact" class="hover:text-honey transition">Contact</a>
             </nav>
-            <a href="#produits" class="bg-honey text-white px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition shadow-md">
-                Commander
-            </a>
+            <div class="hidden md:block">
+                <a href="#produits" class="bg-honey text-white px-6 py-2 rounded-full font-semibold hover:bg-amber-500 transition shadow-md">
+                    Boutique
+                </a>
+            </div>
         </div>
     </header>
 
@@ -70,7 +80,7 @@
                 <div>
                     <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🛡️</div>
                     <h3 class="text-xl font-bold mb-4">Qualité Contrôlée</h3>
-                    <p class="text-stone-600">Importé et analysé pour garantir une pureté absolue à chaque pot.</p>
+                    <p class="text-stone-600">Analysé pour garantir une pureté absolue à chaque pot.</p>
                 </div>
             </div>
         </div>
@@ -79,29 +89,71 @@
     <!-- Product Preview -->
     <section id="produits" class="py-20 bg-stone-50">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl text-center mb-16">Nos Trésors Ambrés</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl mb-4">Nos Trésors de Côte d'Ivoire</h2>
+                <p class="text-stone-600 max-w-xl mx-auto">Une sélection rigoureuse des meilleurs miels sauvages et artisanaux.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
                 <!-- Product 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group">
-                    <a href="produit-miel-foret.html" class="block">
-                        <div class="h-64 bg-stone-200 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80" alt="Miel de Forêt" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        </div>
-                        <div class="p-6">
-                            <div class="flex justify-between items-center mb-2">
-                                <h3 class="text-xl font-bold group-hover:text-honey transition">Miel de Forêt Tropicale</h3>
-                                <span class="text-honey font-bold">12.50€</span>
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">
+                    <div class="h-72 overflow-hidden relative">
+                        <div class="absolute top-4 left-4 bg-honey text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest z-10">Populaire</div>
+                        <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80" alt="Miel de Forêt" class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Miel de Forêt Tropicale</h3>
+                                <p class="text-stone-400 text-xs uppercase font-bold tracking-tighter">Récolte sauvage</p>
                             </div>
-                            <p class="text-stone-600 mb-6 text-sm">Notes boisées et puissance aromatique. Récolté dans les zones forestières de l'Ouest.</p>
+                            <span class="text-2xl font-bold text-honey">14€<span class="text-sm font-normal text-stone-400">/250g</span></span>
                         </div>
-                    </a>
-                    <div class="px-6 pb-6">
-                        <a href="produit-miel-foret.html" class="block w-full text-center border-2 border-honey text-honey font-bold py-2 rounded-lg hover:bg-honey hover:text-white transition">
-                            Voir la fiche produit →
-                        </a>
+                        <p class="text-stone-600 mb-8 text-sm leading-relaxed">Un miel puissant aux notes boisées et maltées, issu de la riche biodiversité des forêts primaires de l'Ouest ivoirien.</p>
+                        <button data-product="Miel de Forêt" class="w-full bg-stone-900 text-white font-bold py-3 rounded-xl hover:bg-honey transition-colors duration-300">
+                            Réserver ce miel
+                        </button>
                     </div>
                 </div>
-                <!-- More products can be added here -->
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="Miel de Caféier" class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Miel de Fleurs de Caféier</h3>
+                                <p class="text-stone-400 text-xs uppercase font-bold tracking-tighter">Monofloral rare</p>
+                            </div>
+                            <span class="text-2xl font-bold text-honey">16€<span class="text-sm font-normal text-stone-400">/250g</span></span>
+                        </div>
+                        <p class="text-stone-600 mb-8 text-sm leading-relaxed">Une rareté aux arômes floraux subtils avec une légère pointe acidulée en fin de bouche.</p>
+                        <button data-product="Miel de Caféier" class="w-full bg-stone-900 text-white font-bold py-3 rounded-xl hover:bg-honey transition-colors duration-300">
+                            Réserver ce miel
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-100">
+                    <div class="h-72 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80" alt="Miel de Savane" class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold mb-1">Miel de Savane Dorée</h3>
+                                <p class="text-stone-400 text-xs uppercase font-bold tracking-tighter">Polyfloral</p>
+                            </div>
+                            <span class="text-2xl font-bold text-honey">12€<span class="text-sm font-normal text-stone-400">/250g</span></span>
+                        </div>
+                        <p class="text-stone-600 mb-8 text-sm leading-relaxed">Un miel doux et fruité, reflet des mille fleurs des savanes du Nord.</p>
+                        <button data-product="Miel de Savane" class="w-full bg-stone-900 text-white font-bold py-3 rounded-xl hover:bg-honey transition-colors duration-300">
+                            Réserver ce miel
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -117,9 +169,42 @@
                 <p class="text-stone-600 text-lg mb-6">
                     Ivoney est né d'une passion pour les produits authentiques. Nous travaillons main dans la main avec des apiculteurs locaux en Côte d'Ivoire pour vous apporter un miel rare, puissant et d'une pureté exceptionnelle.
                 </p>
-                <p class="text-stone-600 text-lg">
-                    Chaque pot raconte l'histoire d'un écosystème préservé et d'un savoir-faire artisanal respectueux de la biodiversité.
-                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
+                <div class="md:w-1/2 bg-stone-900 text-white p-12">
+                    <h2 class="text-3xl mb-6">Commander votre Miel</h2>
+                    <p class="text-stone-400 mb-8">Nous sommes actuellement en phase de lancement. Pour toute commande, remplissez ce formulaire ou contactez-nous directement.</p>
+                    <div class="space-y-4">
+                        <p class="flex items-center text-sm"><span class="w-8 h-8 bg-honey/20 rounded-full flex items-center justify-center mr-3 text-honey">📞</span> +225 XX XX XX XX</p>
+                        <p class="flex items-center text-sm"><span class="w-8 h-8 bg-honey/20 rounded-full flex items-center justify-center mr-3 text-honey">📧</span> TheIvoneyCompagny@proton.me</p>
+                        <p class="flex items-center text-sm"><span class="w-8 h-8 bg-honey/20 rounded-full flex items-center justify-center mr-3 text-honey">🌍</span> Basé en Côte d'Ivoire</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 p-12">
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-400 mb-1">Nom Complet</label>
+                            <input type="text" placeholder="Jean Dupont" class="w-full bg-stone-50 border-none rounded-lg p-3 focus:ring-2 focus:ring-honey outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-400 mb-1">Email</label>
+                            <input type="email" placeholder="jean@exemple.fr" class="w-full bg-stone-50 border-none rounded-lg p-3 focus:ring-2 focus:ring-honey outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-stone-400 mb-1">Message / Commande</label>
+                            <textarea rows="4" placeholder="Je souhaiterais commander..." class="w-full bg-stone-50 border-none rounded-lg p-3 focus:ring-2 focus:ring-honey outline-none"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-honey text-white font-bold py-3 rounded-lg hover:bg-amber-500 transition shadow-lg">
+                            Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -129,7 +214,7 @@
         <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
             <div>
                 <div class="text-2xl font-bold text-honey mb-4">🍯 Ivoney</div>
-                <p class="text-stone-400 text-sm">L'excellence du miel ivoirien livré chez vous en France.</p>
+                <p class="text-stone-400 text-sm">L'excellence du miel ivoirien.</p>
             </div>
             <div>
                 <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Navigation</h4>
@@ -142,17 +227,15 @@
             <div>
                 <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Légal</h4>
                 <ul class="space-y-2 text-stone-400">
-                    <li><a href="#" class="hover:text-white transition">Mentions Légales</a></li>
-                    <li><a href="#" class="hover:text-white transition">CGV</a></li>
-                    <li><a href="#" class="hover:text-white transition">Confidentialité</a></li>
+                    <li><a href="mentions-legales.html" class="hover:text-white transition">Mentions Légales</a></li>
+                    <li><a href="cgv.html" class="hover:text-white transition">CGV</a></li>
+                    <li><a href="politique-confidentialite.html" class="hover:text-white transition">Confidentialité</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Suivez-nous</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-honey transition">FB</a>
-                    <a href="#" class="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center hover:bg-honey transition">IG</a>
-                </div>
+                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Contact</h4>
+                <p class="text-stone-400 mb-2">📍 Abidjan, Côte d'Ivoire</p>
+                <p class="text-stone-400 text-xs">📧 TheIvoneyCompagny@proton.me</p>
             </div>
         </div>
         <div class="container mx-auto px-6 mt-12 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
@@ -161,50 +244,5 @@
     </footer>
 
     <script src="assets/js/script.js"></script>
-</body>
-</html>
-ur vous apporter un miel rare, puissant et d'une pureté exceptionnelle.
-                </p>
-                <p class="text-stone-600 text-lg">
-                    Chaque pot raconte l'histoire d'un écosystème préservé et d'un savoir-faire artisanal respectueux de la biodiversité.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="bg-stone-900 text-white py-12">
-        <div class="container mx-auto px-6 grid md:grid-cols-4 gap-8">
-            <div>
-                <div class="text-2xl font-bold text-honey mb-4">🍯 Ivoney</div>
-                <p class="text-stone-400 text-sm">L'excellence du miel ivoirien livré chez vous en France.</p>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Navigation</h4>
-                <ul class="space-y-2 text-stone-400">
-                    <li><a href="#" class="hover:text-white">Accueil</a></li>
-                    <li><a href="#produits" class="hover:text-white">Boutique</a></li>
-                    <li><a href="#histoire" class="hover:text-white">Notre Histoire</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Légal</h4>
-                <ul class="space-y-2 text-stone-400">
-                    <li><a href="#" class="hover:text-white">Mentions Légales</a></li>
-                    <li><a href="#" class="hover:text-white">CGV</a></li>
-                    <li><a href="#" class="hover:text-white">Politique de Confidentialité</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4 text-honey uppercase tracking-wider text-xs">Contact</h4>
-                <p class="text-stone-400 mb-2">📍 Basé en France</p>
-                <p class="text-stone-400">📧 contact@ivoney.fr</p>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 mt-12 pt-8 border-t border-stone-800 text-center text-stone-500 text-sm">
-            &copy; 2026 Ivoney. Tous droits réservés.
-        </div>
-    </footer>
-
 </body>
 </html>
